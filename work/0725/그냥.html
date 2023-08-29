@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu{
+            list-style: none;
+            padding-left: 0px; /* 안쪽 여백(왼쪽)*/
+            width: 500px;
+            border: 2px solid black; 
+        }
+        #menu>li{
+            border: 2px solid rgb(32, 16, 182);
+            height: 60px;
+            width: 125%;
+            /* border-top: none; */
+            float: left;
+            height: 60px;
+            background-color:rgb(240, 207, 146);
+        }
+        #menu>li>a{
+            border: 1px solid red; 
+            
+             display: block;    /*보여달라는 뜻도 되지만, 인라인레벨을 블록레벨로 변경했다. */
+            height: 100%;
+           
+            text-align: center; /* 수평상의 가운데*/
+            line-height: 60px; /* 수직상의 가운데*/
+            
+            text-decoration: none; /*밑줄 없애기*/
+            font-size: 30px; /*글꼴크기*/
+            font-weight: bold; 
+            color: #ffffff;
+        }
+        #menu>li>a:hover{
+            background-color: blueviolet;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>메뉴</h1>
+        </header>
+        <ul id="menu">
+            
+            <li><a href="">홈</a></li>
+            <li><a href="">상의</a></li>
+            <li><a href="">하의</a></li>
+            <li><a href="">세일</a></li>
+        </ul>
+    </div>
+</body>
+</html>

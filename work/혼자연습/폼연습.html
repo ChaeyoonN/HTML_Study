@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <label for="s_id">아이디</label>
+            <input type="text" name="u_id" id="s_id">
+        </div>
+        <div>
+            <label for="s_pw">비밀번호</label>
+            <input type="password" name="u_pw" id="s_pw">
+        </div>  
+        <div>
+            <label for="s_name">이름</label>
+            <input type="text" name="u_name" id="s_name">
+        </div> 
+            <label for="s_mail">이메일</label>
+            <input type="text" name="u_email" id="s_email">
+        </div> 
+        <div>
+            <button type="button" name="btn" onclick="valChk(this.form)">확인</button>
+        </div>
+    </form>
+
+    <div id="box"></div>
+
+    <script>
+        let box = document.getElementById("box");
+
+    function valChk(){
+        
+    }
+    </script>
+</body>
+</html>

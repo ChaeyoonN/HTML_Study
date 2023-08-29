@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        }
+    /********* 상단영역 **********/
+        #header{
+        width: 970px;
+        height: 140px;
+        margin: auto;
+        }
+        h1{
+            width: 181px;
+            height: 59px;
+            margin: 5px;
+        }
+        .menu{
+            list-style: none;
+            background-color: orangered;
+            width: 100%; /*970px*/
+            height: 50px;
+            
+            font-size: 0;
+            word-spacing: 0;
+            overflow: hidden;
+            
+        }
+        .menu>li{
+            display: inline-block;
+            width: 194px; /*970px*/
+            height: 48px;
+            
+            /* 위 좌우 아래 */
+            /* border: 1px solid #fff; */
+            
+            text-align: center;
+            
+        }
+        .menu>li>a{
+            background: url(./img/gnb_bult.png) no-repeat;
+            /* padding-left: 30px; */
+            border: 1px solid #fff;
+            display: block;
+            width: 194px;
+            height: 100%;
+            text-align: center;
+            padding-top: 12px;
+            
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            
+
+        }
+        
+        .menu>li.l1{
+            background-position: 0 0;
+        }
+        .menu>li.l2{
+            background-position: 0 -22px;
+        }
+        .menu>li.l3{
+            background-position: 0 -44px;
+        }
+        .menu>li.l4{
+            background-position: 0 -66px;
+        }
+        .menu>li.l5{
+            background-position: 0 -88px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><a href=""><img src="./img/logo.png"/></a></h1>
+            <ul class="menu">
+                <li class="list l1"><a href="">기브유</a></li>
+                <li class="list l2"><a href="">위드유</a></li>
+                <li class="list l3"><a href="">스마트 전통시장</a></li>
+                <li class="list l4"><a href="">BRAVO!</a></li>
+                <li class="list l5"><a href="">SKT와 사회공헌</a></li>
+            </ul>
+        </header>
+
+        <footer id="footer">
+            <ul>
+                <li><a href="">개인정보취급방침</a></li>
+                <li><a href="">웹 회원 이용약관</a></li>
+                <li><a href="">책임한계와 법적고지</a></li>
+                <li><a href="">이메일 무단수집 거부</a></li>
+            </ul>
+            <address>서울특별시 중구 을지로 몇가 몇번지
+                대표이사: 마루치
+                고객상담: 국번없이 114 혹은 
+                02-1234-5678 (평일 09:00~17:00)
+            </address>
+            <p class="copyright">copyright (c) 2023 SK telecom. 
+                All rights reserved.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

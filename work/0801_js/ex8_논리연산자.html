@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //논리연산자는 &&(그리고), ||(또는), !(부정) 들이 있다.
+        let a = 10;
+        let b = 8;
+
+        let c = (a > b && b != 0); 
+        document.write(c); //true
+
+        c = (++a <  b-- && ++a != 0);
+        //   11 < 8 =>false이므로 && 뒤의 연산을 하지 않는다. (&&이므로 어차피 false니까)
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write(a); //11
+        document.write("<br/>");
+        document.write(b); //7
+        document.write("<br/>")
+        document.write(c); //false
+
+        c = (++a <  b-- || ++a != 0); 
+        //  12 < 7 =>false ,  13 != 0 =>true 이므로 결과는 true.
+        document.write("<br/>");
+        document.write("<br/>");
+        document.write(a); //13
+        document.write("<br/>");
+        document.write(b); //6
+        document.write("<br/>")
+        document.write(c); //true
+
+    </script>
+</body>
+</html>

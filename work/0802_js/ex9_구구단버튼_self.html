@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #big{
+            background-color: #ddd;
+            border: 1px solid blue;
+            padding: 10px 10px;
+        }
+        #box{
+            width: 500px;
+            height: 300px;
+            border: 1px solid blue;
+            text-align: center;
+            /* line-height: 150px; */
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        button{
+            background-color: blue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="big">
+        <form method="post">
+
+            <button type="button"  value="2" onclick="exe(this)">2단</button>
+            <button type="button"  value="3" onclick="exe(this)">3단</button>
+            <button type="button"  value="4" onclick="exe(this)">4단</button>
+            <button type="button"  value="5" onclick="exe(this)">5단</button>
+            <button type="button"  value="6" onclick="exe(this)">6단</button>
+            <button type="button"  value="7" onclick="exe(this)">7단</button>
+            <button type="button"  value="8" onclick="exe(this)">8단</button>
+            <button type="button"  value="9" onclick="exe(this)">9단</button>
+            
+        </form>
+        <div id="box"></div>
+    </div>
+    <script>
+        let box = document.getElementById("box");
+        function exe(x){
+            // let dan = frm.selectedIndex+2;
+            let dan = x.value;
+            
+            let msg = "";
+            for(i=1; i<=9; i++){
+                msg += dan+"*"+i+"="+dan*i+"<br/>";
+                // document.write(dan+"*"+i+"="+dan*i);
+                // document.write("<br/>");
+
+            }
+            box.innerHTML = msg;
+        }
+    </script>
+</body>
+</html>

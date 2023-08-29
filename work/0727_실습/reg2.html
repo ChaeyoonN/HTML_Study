@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/reg2.css"/>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 상단영역 -->
+        <header id="header">
+            <h1><a href="">SK Together</a></h1>
+            <ul class="gnb">
+                <li><a href=""><span class="menu m01">기브유</span></a></li>
+                <li><a href=""><span class="menu m02">위드유</span></a></li>
+                <li><a href=""><span class="menu m03">스마트 전통시장</span></a></li>
+                <li><a href=""><span class="menu m04">BRAVO!</span></a></li>
+                <li><a href=""><span class="menu m05">SKT와 사회공헌</span></a></li>
+            </ul>
+        </header>
+        <!-- 상단영역 끝 -->
+
+        <!-- 콘텐츠영역 -->
+        <div id="contents">
+            <h1 class="sub_title title01">일반 개인회원가입</h1>
+            <p class="title_src">
+                사회공헌 포탈서비스인 T-together는 
+                누구나 참여할 수 있으며 가입하시면 
+                GiveU(기부)나 자원본사 참여 등
+                다양한 서비스 이용이 가능합니다.
+                이용 프로그램에 따라 필요한 
+                추가 정보를 요청할 수 있습니다.
+            </p>
+            <p class="guide_txt">
+                기본회원정보를 입력해 주세요
+                <span class="txt_r">
+                    <span class="req"></span>
+                    필수입력사항
+                </span>
+            </p>
+            <br/>
+            <form action="" method="post">
+                <table class="table_type">
+                    <colgroup>
+                        <col width="130px"/>
+                        <col width="*"/>
+                    </colgroup>
+                    <tbody>
+                        <!-- <tr>
+                            <th>이름</th>
+                            <td>마루치</td>
+                        </tr> -->
+                        <tr>
+                            <th>
+                                <!-- <span class="req"></span> -->
+                                <label for="s_name">이름</label>
+                            </th>
+                            <td>
+                                <input type="text" name="u_name" id="s_name" class="join"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_id">아이디</label>
+                            </th>
+                            <td>
+                                <p class="guide_txt">
+                                    6~12자리의 영문, 숫자(혼용가능)를 입력해 주세요.
+                                </p>
+                                <input type="text" name="u_id" id="s_id" class="join"/>
+                                <!-- <button type="button">중복확인</button> -->
+                                <span class="btn b_bdcheck">
+                                    <a href="#">중복확인</a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_pw">비밀번호</label>
+                            </th>
+                            <td>
+                                <p class="guide_txt">
+                                    안전을 위해 10개 이상의 문자조합(
+                                    영문 대소문자 + 숫자 또는 기호(!~#@))를 입력해 주세요.
+                                </p>
+                                <input type="password" name="u_pw" id="s_pw" class="join"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_pw2">비밀번호 확인</label>
+                            </th>
+                            <td>
+                                <p class="guide_txt">
+                                    입력하신 비밀번호 확인을 위해 
+                                    다시 한번 입력해 주세요.
+                                </p>
+                                <input type="password" name="u_pw2" id="s_pw2" class="join"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_nick">닉네임</label>
+                            </th>
+                            <td>
+                                <p class="guide_txt">
+                                    닉네임은 한글 1~6자, 영문 대소문자 2~12자, 숫자 사용이 가능하며,
+                                    욕설이나 비속어는 닉네임으로 사용이 불가합니다.
+                                </p>
+                                <input type="text" name="u_nick" id="s_nick" class="join"/>
+                                <!-- <button type="button">중복확인</button> -->
+                                <span class="btn b_bdcheck">
+                                    <a href="#">중복확인</a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_addr">주소</label>
+                            </th>
+                            <td>
+                                <dl>
+                                    <dt>
+                                        <span class="btn post_num">
+                                            <a href="#">우편번호찾기</a>
+                                        </span>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" name="u_addr" id="s_addr" class="join"/>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="fr">
+                                        <label for="s_addr2">기본주소</label>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" name="u_addr2" id="s_addr2" class="join"
+                                        style="width: 300px;"/>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="fr">
+                                        <label for="s_addr3">상세주소</label>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" name="u_addr3" id="s_addr3" class="join"
+                                        style="width: 300px";/>
+                                    </dd>
+                                </dl>
+                                <!-- <div>
+                                    <span class="btn b_addrcheck">
+                                        <a href="#">우편번호찾기</a>
+                                    </span>
+                                    <input type="text" name="u_addrput" id="s_addrput" class="join"/>
+                                </div>
+                                
+                                <div class="middle">
+                                    <label for="s_addr" class="guide_txt">기본주소</label>
+                                    <input type="address" name="u_addr" id="s_addr" class="join"/>
+                                </div>
+                                <div>
+                                    <label for="s_addr" class="guide_txt">상세주소</label>
+                                    <input type="address" name="u_addrdetail" id="s_addrdetail" class="join"/>
+                                </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_bir">생년월일</label>
+                            </th>
+                            <td>
+                                <p class="guide_txt">
+                                    양력/음력 선택 후, YYYYMMDD 형식으로 입력해 주세요. 
+                                    예 ) 19820930
+                                </p>
+                                <select name="birth_type" id="birth_type" class="join">
+                                    <option value="yang">양력</option>
+                                    <option value="eum">음력</option>
+                                </select>
+                                <input type="text" name="u_bir" id="s_bir" class="join"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="gender">성별</label>
+                            </th>
+                            <td>
+                                <select name="gender" id="gender" class="join">
+                                    <option value="yang">여성</option>
+                                    <option value="eum">남성</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <!-- <span class="req"></span> -->
+                                <label for="s_give">관심 기부대상</label>
+                            </th>
+                            <td>
+                                <input type="checkbox" name="u_give" id="s_give" class="join"/>
+                                <label for="s_give">아동</label>
+                                &nbsp;&nbsp;
+                                <input type="checkbox" name="u_give2" id="s_give2" class="join"/>
+                                <label for="s_give2">노인</label>
+                                &nbsp;&nbsp;
+                                <input type="checkbox" name="u_give3" id="s_give3" class="join"/>
+                                <label for="s_give3">건강</label>
+                                &nbsp;&nbsp;
+                                <input type="checkbox" name="u_give4" id="s_give4" class="join"/>
+                                <label for="s_give4">문화</label>
+                                &nbsp;&nbsp;
+                                <input type="checkbox" name="u_give5" id="s_give5" class="join"/>
+                                <label for="s_give5">재능</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_addr">휴대전화번호</label>
+                            </th>
+                            <td>
+                                <div>
+                                    <select name="u_phone" id="s_phone" class="join">
+                                        <option value="firstP">010</option>
+                                    </select>
+                                    <span class="">-</span>
+                                    <input type="text" name="u_secP" id="s_secP" class="join phnum"/>
+                                    <span class="">-</span>
+                                    <input type="text" name="u_secP" id="s_secP2" class="join phnum"/>
+                                    
+                                    <span class="btn b_addrcheck">
+                                        <a href="#">인증하기</a>
+                                    </span>
+                                    <div class="chk_area">
+                                        <input type="checkbox" name="u_agchk" id="s_agchk" class="join"/>
+                                        <label for="s_agchk">정보수신동의</label>
+                                    </div>
+                                    <p class="guide_txt">
+                                        * 수신 동의 선택과 함께 안전한 회원가입을 위해
+                                        인증을 진행해 주세요. 휴대전화번호 입력 후, 인증하기를
+                                        클릭하시면 인증번호가 문자로 발송되며 해당번호를
+                                        입력 창에 입력하시면 됩니다. 인증비용은 T-together에서 
+                                        부담합니다.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="req"></span>
+                                <label for="s_email">이메일</label>
+                            </th>
+                            <td>
+                                <div>
+                                    <input type="text" name="u_email" id="s_email" class="join"/>
+                                    <span class="">@</span>
+                                    <input type="text" name="u_email" id="s_email2" class="join"/>
+                                    
+                                    <select name="emForm" id="emForm" class="join">
+                                        <option value="">::이메일주소선택::</option>
+                                        <option value="type">직접입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                    </select>
+                                    <div class="chk_area">
+                                        <input type="checkbox" name="u_emchk" id="s_emchk" class="join"/>
+                                        <label for="s_emchk">정보수신동의</label>
+                                    </div>
+                                    <p class="guide_txt">
+                                        *이메일은 T-together 활동에 필요한 정보를 받기 위해 
+                                        필요하며 수신동의와 함께 정확한 정보를 입력해 주세요.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn_area">
+                    <span class="btn b_ok">
+                        <a href="#">확인</a>
+                    </span>
+                    <span class="btn b_cancel">
+                        <a href="#">취소</a>
+                    </span>
+                </div>
+            </form>
+        </div>
+        <!-- 콘텐츠영역 끝 -->
+
+        <!-- 하단영역 -->
+        <footer id="footer">
+            <div class="foot_guide">
+                <ul class="foot_menu">
+                    <li><a href="">개인정보취급방침</a></li>
+                    <li><a href="">웹 회원 이용약관</a></li>
+                    <li><a href="">책임한계와 법적고지</a></li>
+                    <li><a href="">이메일 무단수집 거부</a></li>
+                </ul>
+                <address>
+                    서울특별시 중구 을지로 몇가 몇번지
+                    대표이사: 마루치
+                    고객상담: 국번없이 114 혹은 
+                    02-1234-5678 (평일 09:00~17:00)
+                </address>
+                <p class="copyright">
+                    copyright (c) 2023 SK telecom. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        <!-- 하단영역 끝 -->
+    </div>
+    <script>
+        const d = document.querySelector("#emForm");
+        const d2 = document.querySelector("#s_email2");
+
+        // select 옵션 변경 시
+        domainListEl.addEventListener('change', (event) => {
+        // option에 있는 도메인 선택 시
+        if(event.target.value !== "type") {
+            // 선택한 도메인을 input에 입력하고 disabled
+            domainInputEl.value = event.target.value
+            domainInputEl.disabled = true
+        } else { // 직접 입력 시
+            // input 내용 초기화 & 입력 가능하도록 변경
+            domainInputEl.value = ""
+            domainInputEl.disabled = false
+        }
+        })
+    </script>
+</body>
+</html>

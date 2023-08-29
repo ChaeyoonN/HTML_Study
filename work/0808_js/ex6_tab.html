@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        #tabs>div{
+            background-color: #fff;
+        }
+        .w500{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents" class="w500">
+        <div id="tabs">
+            <!-- 누르는 탭들 -->
+            <ul>
+                <li><a href="#t1">첫번째</a></li>
+                <li><a href="#t2">두번째</a></li>
+                <li><a href="#t3">세번째</a></li>
+            </ul>
+            
+            <!-- 각 탭의 내용들 -->
+            <div id="t2">두번째 탭의 내용입니다.</div>
+            <div id="t1">nextjs는 React로 만드는 서버사이드 렌더링 프레인 워크입니다. 서버사이드 렌더링을 함으로 얻는 이득은 다음과 같습니다.<br/>
+
+                클라이언트 렌더링의 경우 모든 js 파일을 로드하고 사용자는 웹을 보게됩니다. 이때까지 사용자는 많은 시간을 대기해야 합니다.
+                seo 문제 - 클라이언트 사이드의 경우 자바스크립트가 로드 되지 않은 경우 아무런 정보를 보이지 않습니다. 구글의 검색엔진의 경우 자바스크립트가 로드되지 않은 페이지를 검색엔진으로 스캔함으로 결론적으로 검색에 아무 페이지도 걸리지 않게 됩니다.</div>
+            <div id="t3">전통적인 Page LifeCycle은 다음과 같습니다<br/>
+                Client에서 Server로 최초의 요청을 보냅니다.
+                Server는 응답을 보내고 Client에서 화면이 보입니다.
+                Client에서 상호작용을 하기위한 요청을 Server에 보냅니다.
+                Server는 이에 응답합니다.
+                페이지가 Reload 됩니다.</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#tabs").tabs();
+        });
+    </script>
+</body>
+</html>

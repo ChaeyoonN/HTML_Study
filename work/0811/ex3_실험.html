@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div#wrap a{
+            border: 1px solid red;
+        }
+        div#wrap{
+            /* border: 1px solid black; */
+            width: 700px;
+            margin: 50px auto; /*위/아래  좌/우 */
+            margin-bottom: 0px;
+
+        }
+        
+        ul#pList{
+            /* border: 1px solid orange; */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            font-size: 0; 
+            word-spacing: 0;
+        }
+
+
+        li.pBox{ /* li태그들 중 클래스가 carBox인 요소들 */
+            display: inline-block; /*li태그는 블록레벨*/
+            width: 170px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 0 0 46px 46px;
+            padding-bottom: 10px;
+        }
+        
+        li.pBox>a{
+            /* 이미지를 감싸는 a태그 */
+            /* a태그는 인라인레벨이므로 안에 있는 이미지의 크기로 인해 
+            문법의 합리성이 떨어지는 코드다. */
+            /* border: 1px solid green; */
+            display: block;
+            width: 160px;
+            height: 120px;
+        }
+        .w100{
+            width: 100px;
+        }
+        
+        li.pBox>span>a{
+            /* name과 price를 각각 감싸는 2개의 span태그 안의 2개의 a태그 */
+            /* border: 2px solid brown; */
+            font: 12px sans-serif;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <select name="selec" id="selec" class="">
+                <option value="brand">제조회사</option>
+                <option value="product_type">제품타입</option>
+                <option value="price_less_than">최고가격</option>
+            </select>
+            
+            <input type="text" id="input"/>
+            <button type="button" onclick="exe()">검색</button>
+        </div>
+    </form>
+    <div id="wrap">
+        <ul id="pList">
+
+        </ul>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        function exe(){
+            //서버호출 (동기식)
+            //document.forms[0].submit();
+
+            
+            //사용자가 선택한 옵션 가져오기
+            let selec = document.getElementById("selec");
+            let sel_val = selec.options[selec.selectedIndex].value; //선택된 옵션의 value를 변수에 저장
+
+            //사용자가 입력한 값(제조회사명, 제품타입명, 최고가격값) 가져오기
+            let input = $("#input").val();
+
+
+            if(input.trim().length > 0){
+
+                //let search = { [`${sel_val}`]: input };
+                let search = sel_val+"="+input;
+                console.log("선택한 옵션:"+sel_val+" 입력한 값:"+input);
+
+                //서버 호출 (비동기식)
+                $.ajax({
+                    url: "http://makeup-api.herokuapp.com/api/v1/products.json", //호출하고자_하는_서버경로
+                    data: search,//"brand="+comp, //서버로_보내고자_하는_파라미터(인자) *입력창갯수만큼 가능*
+                    type: "get", //전송방식(get/post)
+                    dataType: "json" //서버로부터_응답되어오는_자원(return되는_자료형)
+                }).done( function(data){
+                    //요청에 성공했을 때 수행하는 곳
+                    //data가 서버로부터 전달되어오는 return값이다.
+                    console.log(data);
+                    // let comp = data.brand;
+                    // let pt = data.product_type;
+                    // let pr = data.price;
+                    
+
+                    let msg_actual = put(data);
+                    put(data);
+                    $("#wrap>ul").html(msg_actual);
+                    
+                    // switch(sel_val){
+                    //     case "brand":
+                    //         put(data);
+                    //         break;
+                    //     case "product_type":
+                    //         put(data);
+                    //         break;
+                    //     case "price_less_than":
+                    //         put(data);
+                    //         break;
+                    //     }
+                    //     $("#wrap>ul").html(msg_actual);
+                
+
+                } ).fail( function(err){
+                    //요청시 오류가 발생했을 때 수행하는 곳
+                } );
+
+            }
+
+            
+        }
+
+        function put(data){
+            let msg = "";
+                    
+                for(let i=0; i<data.length; i++){
+                            msg += "<li class='pBox'>";
+                            msg += "<a href=''><img src='"+data[i].image_link+"' class='w100'></a>";
+                            msg += "<span><a href='"+data[i].product_link+"'>"
+                                +data[i].name+
+                                "</a></span>";
+                            msg += "<span><a href='"+data[i].product_link+"'>"
+                                +data[i].price+
+                                "</a></span>";
+                            msg += "</li>";
+                }//for의 끝
+                return msg;
+        }
+    </script>
+</body>
+</html>

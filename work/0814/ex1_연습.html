@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+
+    <div id="tabs">
+        <ul>
+          <li><a href="#tab-1">탭 1</a></li>
+          <li><a href="#tab-2">탭 2</a></li>
+        </ul>
+        <div id="tab-1">
+          <p>탭 1의 내용입니다.</p>
+        </div>
+        <div id="tab-2">
+          <p>탭 2의 내용입니다.</p>
+        </div>
+      </div>
+      <button type="button" id="addTab">탭추가</button>
+      <br/>
+      <label for="idx">인덱스:</label>
+      <input type="text" id="idx">
+      <button type="button" id="delTab">탭삭제</button>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        
+        $(function(){
+
+            $(document).ready(function () { //탭 초기화
+                $("#tabs").tabs();
+            });
+            let count = 0;
+            $("#addTab").click(function(){
+              $("#tabs").tabs("add", "#tab-1", "NewTab"+(++count));
+              //아이디가 tab1인 것을 복사해서 만듦
+              $('NewTab').html('Contents added via JS');
+            });
+
+            function changeTabContent(tabId, newContent) {
+                $(tabId).html(newContent);
+            }   
+
+            changeTabContent("#tab-1", "<p>새로운 탭 1의 내용입니다.</p>");
+
+            $.fn.addTab = function (name) {
+            $('ul', this).append('<li><a href="#tab-' + name + '">' + name + '</a></li>');
+            $(this).append("<div id='tab-" + name + "'></div>");
+            $(this).tabs("refresh");
+        };
+
+        $('#tabs').addTab("NewTab");
+        $('#tabs').addTab("Another NewTab");
+        $('#tabs').addTab("etc");
+
+        //Close tab
+        function close_tab(tab_id) {
+            $('.ui-tabs-nav i[target='+tab_id+']').parent().remove();       
+            $('#tabs div#'+tab_id+']').remove();
+            $("#tabs").tabs("refresh");
+        }
+        //Events
+        //CLose
+        $("body").on('click','.ui-tabs-nav .ui-state-default i', function() {
+            close_tab($(this).attr('target'));
+        });
+        //Add
+        $("body").on('click','.addTab', function() {
+            if_tab_exist(this);
+        });
+            
+            
+
+            
+        });
+    </script>
+</body>
+</html>

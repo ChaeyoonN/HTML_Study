@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <table>
+            <colgroup>
+                <col width="80px"/>
+                <col width="320px"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td><label for="s_name">이름</label></td>
+                    <td><input type="text" name="u_name" id="s_name" data-tag-name="이름"></td>
+                </tr>
+                <tr>
+                    
+                    <td><label for="s_id">아이디</label></td>
+                    <td><input type="text" name="u_id" id="s_id" data-tag-name="아이디"></td>
+                </tr>
+                <tr>
+                    <td><label for="s_pw">비밀번호</label></td>
+                    <td><input type="password" name="u_pw" id="s_pw" data-tag-name="비밀번호"></td>
+                </tr>
+                <tr>
+                    <td><label for="s_email">이메일</label></td>
+                    <td><input type="text" name="u_email" id="s_email" data-tag-name="이메일"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <!-- <button type="button" onclick="exe()" name="btn">확인</button> -->
+                        <input type="button" value="확인" onclick="exe()"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
+    <script>
+        // function exe(){
+            
+        // }
+        let exe = function(){ //이렇게도 함수 만들 수 있다.
+            //폼의 요소들을 배열로 얻어낸다. 
+            //폼의 요소들로 인정하는 요소 정해져 있다(input,button,textarea,select등).
+            let ar = document.forms[0].elements;
+            //documents.forms; 현재문서에서 모든 폼들을 배열형태로 얻어낸다.
+            //현재문서에 폼이 1개이므로 document.forms[0];
+            // 폼의 배열이 아닌 폼의 요소를 말하고 싶으므로 document.forms[0].elements;
+
+            //alert(ar.length); 5나옴.
+
+            //반복 수행을 모두 수행했는지? 안했는지? 여부 결정하는 변수
+            let chk = true;
+
+            //얻어낸 폼의 요소들을 모두 반복수행하자!(배열의 수만큼)
+            for(let i=0; i<ar.length-1; i++){
+                // console.log(ar[i].name);
+                if(ar[i].value.trim().length == 0){
+                    //공백만 입력했거나 아무것도 입력하지 않은 경우
+                    //alert(ar[i].name+"를(을) 입력하세요.");
+                    alert(ar[i].dataset.tagName+"를(을) 입력하세요.");
+                    
+                    ar[i].focus(); //해당 요소에 커서 놓기
+                    chk = false;
+                    break; //가장 가까운 반복문 탈출.   return쓰면 함수를 호출한 곳으로 돌아감.
+                }
+            }//for의 끝
+
+            //제어가 여기왔을 때는 두가지 상황 중 하나다.
+            // if(chk==true) if(조건식)=>T/F
+            if(chk)
+                alert("서버로 보낸다."); //document.forms[0].submit();
+            
+
+        }
+    </script>
+</body>
+</html>

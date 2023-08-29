@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #can1{
+            border: 3px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Test</h1>
+    <canvas id="can1" width="600" height="300">
+        현재 브라우저에서는 Canvas를 지원하지 않습니다.
+    </canvas>
+
+    <script>
+        window.onload = function(){
+            let mc = document.getElementById("can1");
+
+            let ctx = mc.getContext("2d");
+
+            if(ctx){
+                ctx.strokeStyle ="#00f";
+                ctx.fillStyle = "#f00";
+                ctx.lineWidth = 5;
+                
+                ctx.beginPath();
+                ctx.arc(150,150, 100, 0, 1.5*Math.PI, false);
+                ctx.stroke();
+
+            }
+
+        }
+    </script>
+</body>
+</html>

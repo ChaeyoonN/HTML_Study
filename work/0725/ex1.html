@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img태그를 모두에게 적용. 요소선택자 */
+        img{
+            width: 170px;
+            height: 100px;
+        }
+        td, th, .text{ /* td 또는 th태그 또는 text라는 클래스 가진 것에 모두 적용 */
+            width: 200px;
+            height: 150px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        table{
+            /* border-spacing: 0px;
+            border: 0px; */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td><img src="Images/si.png"/></td>
+                <td>항목1</td>
+                <td><img src="Images/si2.png"/></td>
+            </tr>
+            
+            <tr>
+                <td>항목2</td>
+                <td><img src="Images/w.png"/></td>
+                <td>항목3</td>
+            </tr>
+            
+            <tr>
+                <td><img src="Images/sp.png"/></td>
+                <td>항목4</td>
+                <td><img src="Images/sp2.png"/></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+    <form>
+        <label for="b_date">생일</label>
+        <input type="text" name="b_date" id="b_date"/>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#b_date").datepicker({
+                dateFormat: "yy-mm-dd", //키:"값" json표기법이라고도 한다.
+                                        // 자바에서 맵구조 
+                                        // 파이썬에서 딕셔너리
+                // defaultDate: new Date("2000/08/15"),
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+                monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월",
+                "9월", "10월", "11월", "12월"],
+                showMonthAfterYear: true,
+                
+            });
+
+        });
+    </script>
+</body>
+</html>

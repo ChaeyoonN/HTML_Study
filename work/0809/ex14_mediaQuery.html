@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            height: 40px;
+            font-weight: bold;
+        }
+        nav ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        @media all and (min-width:800px) {
+            /* pc로 접속시 */
+            article{ width: 100%;}
+            nav{
+                border: 2px solid #f00;
+                width: 100%;
+            }
+            section{
+                display: inline-block;
+                width: 60%;
+                border: 2px solid #0f0;
+            }
+            aside{
+                display: inline-block;
+                width: 20%;
+                border: 2px solid #00f;
+            }
+        }
+
+        @media all and (min-width:400px) and (max-width:800px) {
+            /* 태블릿으로 접속시 */
+            article{ width: 800px;}
+            nav{
+                border: 2px solid #f00;
+                width: 80%;
+                margin: auto;
+                display: flex;
+                justify-content: space-around;
+            }
+            section{
+                display: inline-block;
+                width: 596px;
+                border: 2px solid #0f0;
+            }
+            aside{
+                display: inline-block;
+                width: 596px;
+                border: 2px solid #00f;
+                background-color: #898989;
+                color: #fff;
+            }
+            nav>ul>li{
+                margin: auto;
+                width: 150px;
+                text-align: center;
+            }
+        }
+
+        @media all and (max-width:399px) {
+            /* 휴대폰으로 접속시 */
+            article{ width: 320px;}
+            nav{
+                /* border:2px solid #f00; */
+                width: 316px;
+            }
+            section{
+                display: inline-block;
+                width: 316px;
+                border: 2px solid #0f0;
+            }
+            aside{
+                display: inline-block;
+                width: 316px;
+                border: 2px solid #00f;
+            }
+            nav>ul>li{
+                width: 316px;
+                text-align: center;
+                background-color: aquamarine;
+                border-bottom: 1px solid blue;
+            }
+        
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Menu01</a></li>
+                <li><a href="#">Menu02</a></li>
+                <li><a href="#">Menu03</a></li>
+                <li><a href="#">Menu04</a></li>
+                <li><a href="#">Menu05</a></li>
+                <li><a href="#">Menu06</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <header>
+            <h2>Media Queries Test</h2>
+        </header>
+        <p>
+            태풍 '카눈'의 북상에 따라 서울 등 8개 시·도 숙소로 이동한 
+            세계잼버리 스카우트 대원들이 각 지역에서 운영하는 문화·체험 
+            프로그램에 참여하며 '세계 잼버리'의 남은 일정을 이어간다.<br/>
+            9일 정부와 세계잼버리 조직위원회에 따르면 지역 문화·체험은 
+            K-컬쳐부터 자연환경, 첨단 산업 현장 견학까지 다양하게 
+            마련됐다. 새로운 체험과 모험, 교류라는 잼버리의 취지를 
+            최대한 살려 운영된다.<br/>
+            3210명의 잼버리 대원을 맞게 된 서울시는 이날부터 13일까지 
+            서울시청 앞 광장에 잼버리 커뮤니티 광장을 설치해 서울에 
+            머물고 있는 스카우트 대원들이 교류를 이어갈 수 있도록 했다.<br/>
+            충남 대천해수욕장에서는 물세례를 받으며 신나는 음악과 함께 
+            무더위를 식힐 수 있는 '머드몹신'이 열리고 전북 순창에서는 
+            고추장 만들기 프로그램으로 한국 문화를 체험한다.
+        </p>
+    </section>
+    <aside>
+        <p>sideMenu1</p>
+        <p>sideMenu2</p>
+        <p>sideMenu3</p>
+    </aside>
+</body>
+</html>

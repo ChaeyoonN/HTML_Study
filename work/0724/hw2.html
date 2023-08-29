@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2</title>
+    <style>
+        .table_txt{
+            text-align: center;
+            
+        }
+        .table_caption{
+            font-weight: bold;
+        }
+        .img{
+            max-width: 100%; height: auto
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="arr_table">
+        <div>
+        <table border="1"  class="table_txt" >
+            <colgroup>
+                <col width="33%"/>
+                <col width="33%"/>
+                <col width="*"/>
+            </colgroup>
+            <caption class="table_caption">문제1</caption>
+            <tr>
+                <td><img src="Images/si.png" class="img"/></td>
+                <td>고요함</td>
+                <td><img src="Images/si2.png"/></td>
+            </tr>
+            <tr>
+                <td>외침 속</td>
+                <td><img src="Images/w.png" class="img"/></td>
+                <td>항해</td>
+            </tr>
+            <tr>
+                <td><img src="Images/sp.png" class="img"/></td>
+                <td>봄의 옷</td>
+                <td><img src="Images/sp2.png" class="img"/></td>
+            </tr>       
+        </table>
+        </div> <br/>
+        
+        <div>
+        <table border="1" class="table_txt" height="300px">
+            <colgroup>
+                <col width="300px"/>
+                <col width="300px"/>
+                <col width="300px"/>
+            </colgroup>
+            <caption class="table_caption">문제2</caption>
+            <tr>
+                <td rowspan="3">사진</td>
+                <td colspan="2">타이틀입니다.</td>
+            
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>            
+                <td>데이터</td>
+                <td rowspan="3" colspan="2">데이터</td>
+                
+            </tr>
+            <tr>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

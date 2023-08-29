@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Range연습</legend>
+            <label for="s1">Range:</label>
+            <input type="range" name="s1" id="s1" min="0" max="100"
+            value="90" step="5" onchange="setVal(this)" oninput=""/>
+            <!-- onchange이벤트는 값이 변경되고 포커스를 잃을 때 발생 -->
+            <output id="s2">90</output>
+            <!-- output(this)이 있는 폼에서 이름이 s1인 요소의 value -->
+            <button type="button">보내기</button>
+        </fieldset>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+
+
+        function setVal(ran){
+            // document.getElementById('s2').value = ran.value;
+            $("#s2").val(ran.value); //두문장이다. 
+            //input태그의 value를 아이디가 s2인 태그의 value로 한다.
+            // $("#s2").val($(ran).val());
+        }
+    </script>
+</body>
+</html>

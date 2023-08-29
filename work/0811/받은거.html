@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta value="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 2px;
+            text-align: center;
+            padding: 2px;
+        }
+
+        span {
+            border-top: 1px solid black;
+            margin: 2px;
+        }
+        .w100{
+            width: 100px;
+            height : 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <select id="select">
+            <option value="brand">제조회사</option>
+            <option value="product_type">제품타입</option>
+            <option value="price_less_than">최고가격</option>
+        </select>
+        <input type="text">
+        <input type="button" value="검색">
+    </form>
+
+    <div id="list" style="display: flex; flex-wrap: wrap; border-top: none;">
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+            // let chs = select.value;
+            // let s_chk = {['$(chs)']}:comp;
+            $("input:button").bind("click", function () {
+                // let select = document.querySelector("select");
+                
+                let comp = $("input:text").val();
+                if (comp.trim().length > 0) {
+                    
+                    let select = document.getElementById("select");
+                    let chs = select.options[select.selectedIndex].value;
+                    console.log(chs);
+                    let search = chs+"="+comp;
+                        $.ajax({
+                            url: "https://makeup-api.herokuapp.com/api/v1/products.json",
+                            data: search, // data: chs+"="+comp, // data: { [`${chs}`]: comp,}, 
+                            type: "get",
+                            dataType: "json",
+                        }).done(function (data) {
+                            console.log(data);
+                            let msg = "";
+                            for (let i = 0; i < data.length; i += 1) {
+                                msg += "<div>";
+                                msg += "<img src='" + data[i].image_link + "' class='w100'><br/>";
+                                msg += "<span>" + data[i].value + "</span><br/>";
+                                msg += "<span>$" + data[i].price + "</span><br/>";
+                                msg += "</div>";
+                            }
+                            $("body>div").append(msg);
+                        });
+                    }
+            })
+        }
+    </script>
+</body>
+<!-- ctrl a, k, f 전체 간격 조절 기능-->
+
+</html>

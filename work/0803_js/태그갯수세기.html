@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name='my_form'>
+        <input type='button' onclick='count_input();' value='개수 세기' />
+        <hr>
+        <input type='text' name='tag' />
+        <input type='text' name='tag' />
+        <input type='text' name='tag' />
+        <input type='text' name='tag' />
+        <input type='text' name='tag' />
+      </form>
+      
+      <script>
+        function count_input() {
+          alert(my_form.tag.length);
+        }
+        // https://zetawiki.com/wiki/
+      </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1{
+            width: 520px;
+            border-collapse: collapse;
+        }
+        #t1 td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery를 이용한 체크박스 선택</h1>
+    <table id="t1">
+        <colgroup>
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em> <!-- emphasize태그는 문장 내에서 강조하고 싶을 때 쓴다.
+                    (i태그와 strong태그를 합친 것) -->
+                </td>
+     
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em> <!-- emphasize태그는 문장 내에서 강조하고 싶을 때 쓴다.
+                    (i태그와 strong태그를 합친 것) -->
+                </td>
+        
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em> <!-- emphasize태그는 문장 내에서 강조하고 싶을 때 쓴다.
+                    (i태그와 strong태그를 합친 것) -->
+                </td>
+
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em> <!-- emphasize태그는 문장 내에서 강조하고 싶을 때 쓴다.
+                    (i태그와 strong태그를 합친 것) -->
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>제목1</td>
+                <td><input type="checkbox"></td>
+                <td>제목1-2</td>
+                <td><input type="checkbox"></td>
+                <td>제목1-3</td>
+                <td><input type="checkbox"></td>
+                <td>제목1-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>제목2</td>
+                <td><input type="checkbox"></td>
+                <td>제목2-2</td>
+                <td><input type="checkbox"></td>
+                <td>제목2-3</td>
+                <td><input type="checkbox"></td>
+                <td>제목2-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>제목3</td>
+                <td><input type="checkbox"></td>
+                <td>제목3-2</td>
+                <td><input type="checkbox"></td>
+                <td>제목3-3</td>
+                <td><input type="checkbox"></td>
+                <td>제목3-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>제목4</td>
+                <td><input type="checkbox"></td>
+                <td>제목4-2</td>
+                <td><input type="checkbox"></td>
+                <td>제목4-3</td>
+                <td><input type="checkbox"></td>
+                <td>제목4-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>제목5</td>
+                <td><input type="checkbox"></td>
+                <td>제목5-2</td>
+                <td><input type="checkbox"></td>
+                <td>제목5-3</td>
+                <td><input type="checkbox"></td>
+                <td>제목5-4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            //
+            
+
+            let tr = $("#t1>tbody>tr"); //5개의 tr로 구성된 배열
+            console.log(tr);
+            let tiBox = tr.find(":checkbox"); 
+            //tr 안의 모든 요소 중 type이 checkbox인 20개의 input태그로 구성된 배열
+            let tiBoxx = tr.children(":checkbox");
+            //tr 바로 아래에 해당 타입인 요소 없음
+            console.log(tiBox);
+            console.log(tiBoxx);
+
+            //thead에 있는 체크박스 요소를 클릭할 때마다 수행하는 이벤트 적용!
+            $("#t1>thead :checkbox").click( function(){
+                //thead에 존재하는 체크박스들 모두 가져오기
+                let ar = $("#t1>thead :checkbox"); //배열
+                console.log(ar); //전체선택체크박스
+                console.log(ar.eq(0)); //첫번째 전체선택체크박스
+                console.log(ar.eq(1)); //두번째 전체선택체크박스
+                console.log(ar.eq(2)); //세번째 전체선택체크박스
+                console.log(ar.eq(3)); //네번째 전체선택체크박스
+                
+                let idx = ar.index(this); //사용자가 클릭한 체크박스의 위치값(index)
+                //$("해당요소").index() : 해당요소가 부모요소의 몇번째자식인가 
+                //$("해당요소").index(this) : 해당요소로 구성된 배열에서 this는 몇번째인가 
+                let chk = this.checked; //사용자가 클릭한 체크박스(this)의 상태(true/false)
+
+                //tbody에 있는 tr들을 만날 때마다 수행하는 곳!
+                $("#t1>tbody>tr").each(function(){
+                    //tbody에 있는 tr들은 각각 자손으로 체크박스들을 가지고 있다.
+                    //해당 행의 체크박스들을 얻어낸다.
+                    let c_ar = $(this).find(":checkbox"); //tr 안에서 타입이 체크박스인
+                    //요소들로 구성된 배열
+                    c_ar.eq(idx).prop("checked", chk); //chk가 t면 t로, chk가 f면 f로.
+                });
+
+                //글씨도 바꾸기
+                if(chk){
+                    $(ar).eq(idx).next().text("전체해제");
+                }else{
+                    $(ar).eq(idx).next().text("전체선택");
+                }
+            } );
+
+            
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+#contents{
+    width: 970px;
+    height: auto;
+    margin: auto;
+    padding-top: 30px;
+    /* border: 1px solid red; */
+    position: relative;
+}
+.sub_title{
+    background: url(../img/sub_title.png) no-repeat;
+    text-indent: -9999px;
+}
+h1.tit02{
+    /* border: 5px solid black; */
+    height: 30px;
+    width: 132px;
+    
+    background-position: 0 -50px;
+}
+
+.login_area{
+    width: 750px;
+    height: 205px;
+    margin: 80px auto;
+    padding: 20px 70px;
+    position: relative;
+    margin-bottom: 50%;
+    background: url(../img/login_bg.png);
+}
+.person_login{
+    display: inline-block;
+    width: 290px;
+    /* border: 1px solid blue; */
+}
+.group_login{
+    display: inline-block;
+    width: 290px;
+    /* border: 1px solid blue; */
+    position: absolute;
+    right: 70px;
+}
+
+h2.title01{
+    /* border: 1px solid blue; */
+    height: 75px;
+    background-position: 0 -80px;
+    
+    
+}
+h2.title02{
+    /* border: 1px solid blue; */
+    height: 75px;
+    background-position: 0 -160px;
+    
+}
+.login{
+    padding: 15px 0;
+    /* border: 5px dotted darkorange; */
+    position: relative; /* 로그인버튼 위치의 기준*/
+}
+.input_area{
+    /* list-style: circle; */
+    /* border: 1px solid red; */
+    position: relative;
+    margin-bottom: 7px;
+    /* padding-bottom:7px; */
+
+}
+.input_area p{
+    /* margin: 10px; */
+    padding: 3px 0;
+}
+.input_area p:first-child{
+    padding-top: 0;
+}
+.input_area p>label{
+    /* border: 1px solid palegreen; */
+    display: inline-block;
+    width: 55px; /* 입력란 맞추기 위해 */
+    background:  url(../img/bult.png) no-repeat 0 -76px;
+    padding-left: 10px;
+
+}
+.input_area p input{
+    width: 110px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+.btnArea_right{
+    display: inline-block;
+    /* border: 1px dotted red; */
+    width: 86px;
+    height: 56px;
+    
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.btn>a{
+    /* border: 2px dotted fuchsia; */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+.btn>a:hover{
+    
+    /* opacity: 0.5; */
+    background-color: rgba( 255, 165, 0, 0.5 );
+}
+.login_search{
+    position: relative;
+    border-top: 1px solid #ccc;
+    /* border: 1px solid green; */
+    /* padding-top: 7px; */
+    padding: 10px 0;
+    /* margin-top: 10px; */
+}
+.b_search{ /* 아이디/비밀번호 찾기 버튼 */
+    background-position: -100px 0;
+    display: inline-block;
+    
+    width: 156px;
+    height: 27px;
+    
+    position: absolute; /* margin-left: 44px; */
+    right: 0;
+}

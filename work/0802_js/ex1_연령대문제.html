@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 265px;
+            height: 100px;
+            border: 1px solid red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="s_age">나이:</label>
+        <input type="text" name="u_age" id="s_age">
+        <button type="button" onclick="exe()">확인</button>
+    </form>
+
+    <div id="box"></div>
+
+    <script>
+        let box = document.getElementById("box");
+
+        function exe(){
+            let a = document.getElementById("s_age");
+            let a_value = a.value;
+            //유효성 검사
+            if(a_value.trim().length > 0){
+                // 트림하고 남은 길이가 0보다 클 때
+                // let middleDel = a_value.replace(/(\s*)/g,'');
+                let middleDel = a_value.replace(/\s/g,'');
+
+                // let age = parseInt(a_value);
+                let age = parseInt(middleDel);
+               
+                if(age >= 100)
+                    box.innerText = "100세 이상!";
+                else if(age >= 90)
+                    box.innerText = "90대입니다.";
+                else if(age >= 80)
+                    box.innerText = "80대입니다.";
+                else if(age >= 70)
+                    box.innerText = "70대입니다.";
+                else if(age >= 60)
+                    box.innerText = "60대입니다.";
+                else if(age >= 50)
+                    box.innerText = "50대입니다.";
+                else if(age >= 40)
+                    box.innerText = "40대입니다.";
+                else if(age >= 30)
+                    box.innerText = "30대입니다.";
+                else if(age >= 20)
+                    box.innerText = "20대입니다.";
+                else if(age >= 10)
+                    box.innerText = "10대입니다.";
+                else
+                    box.innerText = "10대 미만!";
+            }else{
+                //트림하고 남은 길이가 0이거나 0보다 작을 때=>즉 공백일 때
+                alert("나이를 입력해 주세요!");
+                a.value = "";
+                // s_age.focus();
+                a.focus();
+
+            }
+            
+
+            
+            
+
+        }
+    </script>
+</body>
+</html>

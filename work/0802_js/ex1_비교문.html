@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 150px;
+            border: 1px solid blue;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <label for="age">나이:</label>
+        <input type="text" name="u_age" id="age">
+        <button type="button" onclick="exe(this.form)">확인</button>
+        <!-- this는 표기된 해당 객체를 의미한다. 여기서는 <button....>이다.
+            그리고 this.form은 
+        <button...>가 포함된 폼객체 전체를 의미한다. 즉,
+            exe함수를 호출할 때 인자로 폼전체를 전달한다. -->
+    </form>
+
+    <div id="box"></div>
+    
+    <script>
+        let box = document.getElementById("box");
+
+        function exe(frm){
+            //frm은 폼이다. 그리고 폼 안에 있는 요소들을 접근할 때는 
+            // id가 아니라 name으로 접근해야 한다.
+            // let a = parseInt(document.getElementById("age").value); 아이디로 접근하는 방법
+            let age = parseInt(frm.u_age.value);
+            let msg = "";
+            // let a = document.getElementById("s_age");
+            // let a_value = a.value;
+            //유효성 검사
+            if(age >= 70)
+                msg = "노년";
+            else if(age >= 60)
+                msg = "60대";
+            else if(age >= 50)
+                msg = "50대";
+             else if(age >= 40)
+                msg = "40대";    
+            else if(age >= 30)
+              msg = "30대";
+            else if(age >= 20)
+                msg = "20대";
+             else if(age >= 10)
+                msg = "10대";
+            else 
+                msg = "어린이 또는 유아"
+            
+            //if문을 나온 상태
+            box.innerText = msg;
+
+            // if(a_value.trim().length > 0){
+            //     // 트림하고 남은 길이가 0보다 클 때
+            //     let age = parseInt(a_value);
+               
+            //     if(age >= 100)
+            //         msg = "100세 이상!";
+            //     else if(age >= 90)
+            //         msg = "90대입니다.";
+            //     else if(age >= 80)
+            //         msg = "80대입니다.";
+            //     else if(age >= 70)
+            //         msg = "70대입니다.";
+            //     else if(age >= 60)
+            //         msg = "60대입니다.";
+            //     else if(age >= 50)
+            //         msg = "50대입니다.";
+            //     else if(age >= 40)
+            //         msg = "40대입니다.";
+            //     else if(age >= 30)
+            //         msg = "30대입니다.";
+            //     else if(age >= 20)
+            //         msg = "20대입니다.";
+            //     else if(age >= 10)
+            //         msg = "10대입니다.";
+            //     else
+            //         msg = "10대 미만!"
+            // }else{
+            //     //트림하고 남은 길이가 0이거나 0보다 작을 때=>즉 공백일 때
+            //     alert("나이를 입력해 주세요!");
+            //     a.value = "";
+            //     s_age.focus();
+            // }
+            
+        }
+    </script>
+</body>
+</html>

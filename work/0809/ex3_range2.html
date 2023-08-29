@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form oninput="x.value=parseInt(s1.value)">
+        <!-- oninput이벤트는 값이 변경될 때 발생 
+        form태그나 input태그에 넣기-->
+        <fieldset>
+            <legend>Range연습</legend>
+            <label for="s1">Range:</label>
+            <input type="range" name="s1" id="s1" min="0" max="100"
+            value="50" step="5" />
+            <output name="x" for="s1"></output>
+            <!-- output(this)이 있는 폼에서 이름이 s1인 요소의 value -->
+            <button type="button">보내기</button>
+        </fieldset>
+    </form>
+
+</body>
+</html>
